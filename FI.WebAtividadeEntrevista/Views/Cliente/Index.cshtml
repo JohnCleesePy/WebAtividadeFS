@@ -3,13 +3,13 @@
     ViewBag.Title = "Clientes";
 }
 @section scripts{
-<script>
-    var urlAlteracao = '@Url.Action("Alterar", "Cliente", new { area = "" })';
-    var urlClienteList = '@Url.Action("ClienteList", "Cliente", new { area = "" })';
+    <script>
+        var urlAlteracao = '@Url.Action("Alterar", "Cliente", new { area = "" })';
+        var urlClienteList = '@Url.Action("ClienteList", "Cliente", new { area = "" })';
 
-</script>
+    </script>
     @Scripts.Render("~/bundles/listClientes")
 }
 <h2>@Html.Raw(ViewBag.Title)</h2>
-@Html.ActionLink("Novo Cliente", "Incluir", "Cliente", new { }, new { @class= "btn btn-sm btn-primary pull-right" })
+@Html.ActionLink("Novo Cliente", "Incluir", "Cliente", new { }, new { @class = "btn btn-sm btn-primary pull-right" })
 <table id="gridClientes" class="table"></table>
