@@ -11,7 +11,7 @@ namespace FI.AtividadeEntrevista.DAL
         {
             get
             {
-                ConnectionStringSettings conn = ConfigurationManager.ConnectionStrings["BancoDeDados"];
+                ConnectionStringSettings conn = System.Configuration.ConfigurationManager.ConnectionStrings["BancoDeDados"];
                 if (conn != null)
                     return conn.ConnectionString;
                 else
@@ -24,7 +24,7 @@ namespace FI.AtividadeEntrevista.DAL
             SqlCommand comando = new SqlCommand();
             SqlConnection conexao = new SqlConnection(stringDeConexao);
             comando.Connection = conexao;
-            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.CommandText = NomeProcedure;
             foreach (var item in parametros)
                 comando.Parameters.Add(item);
@@ -46,7 +46,7 @@ namespace FI.AtividadeEntrevista.DAL
             SqlConnection conexao = new SqlConnection(stringDeConexao);
 
             comando.Connection = conexao;
-            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.CommandText = NomeProcedure;
             foreach (var item in parametros)
                 comando.Parameters.Add(item);
